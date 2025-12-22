@@ -2,40 +2,70 @@
 <html lang="el">
 <head>
   <meta charset="UTF-8">
-  <title>Δικαιολόγηση Απουσιών</title>
+  <title>2Γε.Λ. Καστοριάς</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Όνομα εφαρμογής -->
+  <meta name="application-name" content="2Γε.Λ. Καστοριάς">
+  <meta name="apple-mobile-web-app-title" content="2Γε.Λ. Καστοριάς">
+
+  <!-- Μπλε favicon (εικονίδιο) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+    <rect width='100' height='100' rx='20' fill='%231e3a8a'/>
+    <text x='50%' y='62%' text-anchor='middle'
+          font-size='50' fill='white'
+          font-family='Arial' font-weight='bold'>2Γε</text>
+  </svg>">
+
 </head>
-<body style="font-family: Arial; text-align: center; margin-top: 40px;">
 
-  <!-- Λογότυπο σχολείου -->
-  <h1 style="color:#1e3a8a; margin-bottom: 20px;">2ο Γενικό Λύκειο Καστοριάς</h1>
+<body style="font-family: Arial; text-align: center; margin-top: 50px;">
 
-  <!-- Τίτλος -->
+  <h1 style="color:#1e3a8a;">2ο Γενικό Λύκειο Καστοριάς</h1>
   <h2>Δικαιολόγηση Απουσιών</h2>
-  <p>Πατήστε το κουμπί για να συνεχίσετε.</p>
 
-  <!-- Κουμπί για να ανοίξει η σελίδα -->
-  <a href="https://2lyk-kastor.kas.sch.gr/attachments/category/2/aitisi_fixed%283%29.html"
-     style="
-       display:inline-block;
-       padding:15px 25px;
-       background:#1e3a8a;
-       color:white;
-       text-decoration:none;
-       border-radius:8px;
-       font-size:18px;">
-     ➜ Συνέχεια
-  </a>
+  <p>Εισάγετε τον κωδικό για να συνεχίσετε:</p>
 
-  <!-- Αυτόματο redirect με JavaScript -->
+  <input
+    type="password"
+    id="password"
+    placeholder="Κωδικός"
+    style="padding:10px; font-size:16px;"
+  >
+  <br><br>
+
+  <button
+    onclick="checkPassword()"
+    style="padding:12px 25px; font-size:16px;
+           background:#1e3a8a; color:white;
+           border:none; border-radius:6px;"
+  >
+    ➜ Συνέχεια
+  </button>
+
   <script>
-    setTimeout(function() {
-      window.location.href = "https://2lyk-kastor.kas.sch.gr/attachments/category/2/aitisi_fixed%283%29.html";
-    }, 1000); // 1 δευτερόλεπτο
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+
+      // ΚΩΔΙΚΟΣ: xk2gel  → Base64
+      const encoded = "eGs yZ2Vs".replace(" ", ""); // xk2gel
+
+      const correctPassword = atob(encoded);
+
+      if (input === correctPassword) {
+        window.location.href =
+          "https://2lyk-kastor.kas.sch.gr/attachments/category/2/aitisi_fixed%283%29.html";
+      } else {
+        alert("Λάθος κωδικός. Προσπαθήστε ξανά.");
+      }
+    }
   </script>
 
 </body>
 </html>
+
+
 
 
 
